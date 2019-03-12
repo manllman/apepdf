@@ -1,0 +1,69 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="icon" href="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552312758514&di=36a7488b\
+    fa92ec424e2f304d4b00d401&imgtype=0&src=http%3A%2F%2Fwww.pansino.com.cn%2Fuploadsfile%2F20131230120041.jpg"\
+    type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-title" content="PDF书籍大全，PDF书籍下载">
+    <title>BringPDF,猿来PDF</title>
+
+    <link rel='stylesheet' id='bootstrap-css' href='{% static "css/bootstrap.min.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='fontawesome-css' href='{% static "css/font-awesome.min.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='stylesheet-css' href='{% static "css/style.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='raxus-css' href='{% static "css/raxus.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='open-social-style-css' href='{% static "css/os.css" %}' type='text/css' media='all'/>
+    <meta name='robots' content='index,follow'/>
+    <meta name="keywords" content="电子书，PDF，高清免费电子书，PDF下载，IT互联网">
+    <meta name="description" content="免费的高清PDF书籍资源下载，无需登陆，没有广告，一个纯粹的PDF书籍资源分享网站！猿来PDF--IT界PDF书籍的海洋，程序员要来的PDF书籍分享网站。">
+</head>
+<body class="home blog site-layout-2">
+<!-- 头部 -->
+<header class="fix-wrap" id="fix-wrap">
+    <div class="fix-main clearfix pr" id="fix-main" _hover-ignore="1"><a href="/" class="index-logo">
+        <img src="{% static "picture/index-logo.png" %}" alt="猿来PDF"></a>
+        <nav class="nav fl">
+            <ul id="fix-list" class="fix-list clearfix">
+
+                <li id="menu-item-24086" class="menu-item"><a href="/">首页</a></li>
+                {% for cat in allcategory %}
+                <li id="menu-item-24086" class="menu-item">
+                    <a href="{% url 'index' %}list-{{ cat.id }}.html">{{ cat.name }}</a>
+                </li>
+                {% endfor %}
+·
+
+
+
+                <li id="menu-item-24086" class="menu-item"><a href="/about/">关于本站</a></li>
+            </ul>
+        </nav>
+        <form method="get" class="index-search  hidden-xs" action="{% url 'index' %}s/">
+            <input class="text" name="search" type="text" placeholder="输入关键字" value="">
+            <button class="submit" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<!-- 底部 -->
+<script src="{% static "js/bundle.js" %}"></script>
+<script type="text/javascript" src="{% static "js/view-history.js" %}"></script>
+<script type='text/javascript' src="{% static "js/push.js" %}"></script>
+<script type='text/javascript' src='{% static "js/jquery.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/bootstrap.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/raxus-slider.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/loader.js" %}'></script>
+<script type='text/javascript' src='{% static "js/bj-lazy-load.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/os.js" %}'></script>
+
+</body>
+</html>
